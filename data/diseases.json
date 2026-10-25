@@ -1,0 +1,500 @@
+[
+  {
+    "id": "migraine_headache",
+    "name": "Migraine Episode",
+    "system": "nervous",
+    "category": "Neurological",
+    "urgency": "Moderate",
+    "demographic_risk": {
+      "gender_bias": "female",
+      "gender_multiplier": 1.4,
+      "age_min": 18,
+      "age_max": 49,
+      "age_multiplier": 1.25,
+      "risk_explanation": "Migraines occur up to 3 times more frequently in females, particularly during reproductive and young adult years."
+    },
+    "core_symptoms": ["headache_throbbing", "light_sensitivity", "nausea_vomiting"],
+    "secondary_symptoms": ["blurred_vision", "dizziness", "fatigue", "stiff_neck"],
+    "description": "A neurological condition marked by severe, pulsating unilateral or bilateral head pain, visual auras, and intense sensory hypersensitivity.",
+    "measurements_and_cures": {
+      "overview": "Sensory resting, cold compress therapy, hydration, and trigger elimination.",
+      "immediate_home_measures": [
+        "Rest in a completely dark, quiet room.",
+        "Apply a cold ice pack to forehead and temples for 15-20 minutes.",
+        "Sip cold electrolyte water or ginger tea for nausea.",
+        "Practice slow rhythmic diaphragmatic breathing."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Avoid aged cheeses, artificial sweeteners, nitrates, and alcohol.",
+        "Maintain strict regular sleep and eating schedules.",
+        "Reduce screen brightness and use blue-light filtering."
+      ],
+      "when_to_see_doctor": [
+        "Sudden explosive thunderclap headache reaching maximum severity in seconds.",
+        "Headache accompanied by high fever, confusion, or weakness.",
+        "Attacks occurring more than 3 times per week."
+      ],
+      "typical_medical_treatments": [
+        "Triptans or CGRP antagonists prescribed for acute abortive therapy.",
+        "Preventative beta-blockers or neuromodulators for recurrent attacks."
+      ],
+      "prevention_tips": [
+        "Keep a daily migraine trigger diary.",
+        "Stay consistently hydrated with 2.5 liters of water daily."
+      ]
+    }
+  },
+  {
+    "id": "influenza_flu",
+    "name": "Seasonal Influenza (Flu)",
+    "system": "respiratory",
+    "category": "Infectious / Viral",
+    "urgency": "Moderate",
+    "demographic_risk": {
+      "gender_bias": "any",
+      "gender_multiplier": 1.0,
+      "age_min": 0,
+      "age_max": 100,
+      "age_multiplier": 1.2,
+      "risk_explanation": "Affects both genders; highest severity in young children and adults over 65."
+    },
+    "core_symptoms": ["fever", "chills", "body_aches", "fatigue", "dry_cough"],
+    "secondary_symptoms": ["sweating", "loss_of_appetite", "sore_throat", "headache_throbbing"],
+    "description": "A contagious viral respiratory illness caused by influenza viruses infecting the throat, nose, and lungs with sudden high fever, chills, and severe aches.",
+    "measurements_and_cures": {
+      "overview": "Strict bed rest, oral rehydration, antipyretics, and early antiviral assessment within 48 hours.",
+      "immediate_home_measures": [
+        "Stay strictly in bed; physical rest speeds immune recovery.",
+        "Drink warm broths, electrolyte water, and herbal teas.",
+        "Use lukewarm sponge baths to manage fever comfortably.",
+        "Use a cool-mist room humidifier to ease throat dryness."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Eat light, easily digestible meals: bananas, rice, toast, and soups.",
+        "Isolate at home until fever-free for 24 hours without medication."
+      ],
+      "when_to_see_doctor": [
+        "Shortness of breath, blue lips/face, or persistent chest pressure.",
+        "Confusion or inability to wake up.",
+        "Symptoms initially improve but return worse with deep chest coughing."
+      ],
+      "typical_medical_treatments": [
+        "Prescription antivirals (e.g. Oseltamivir/Tamiflu) within 48 hours.",
+        "Antipyretics and analgesics (Acetaminophen / Ibuprofen)."
+      ],
+      "prevention_tips": [
+        "Receive the annual seasonal influenza vaccine.",
+        "Wash hands frequently with soap for at least 20 seconds."
+      ]
+    }
+  },
+  {
+    "id": "common_cold",
+    "name": "Acute Upper Respiratory Infection (Common Cold)",
+    "system": "throat_ent",
+    "category": "Infectious / Viral",
+    "urgency": "Mild",
+    "demographic_risk": {
+      "gender_bias": "any",
+      "gender_multiplier": 1.0,
+      "age_min": 0,
+      "age_max": 95,
+      "age_multiplier": 1.1,
+      "risk_explanation": "Very common worldwide across all ages and genders."
+    },
+    "core_symptoms": ["runny_nose", "sore_throat", "sneezing", "dry_cough"],
+    "secondary_symptoms": ["fatigue", "body_aches", "weakness"],
+    "description": "A benign, self-limiting viral infection of the nose and throat causing nasal congestion, sneezing, tickly cough, and mild malaise.",
+    "measurements_and_cures": {
+      "overview": "Warm saline gargles, nasal irrigation, rest, and abundant fluids.",
+      "immediate_home_measures": [
+        "Gargle with warm salt water 3-4 times a day.",
+        "Inhale steam from a hot shower or facial steamer.",
+        "Use sterile saline nasal spray to clear congestion.",
+        "Drink warm water with raw honey and lemon."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Eat vitamin C-rich fruits and warm soups.",
+        "Get 8-9 hours of restful sleep."
+      ],
+      "when_to_see_doctor": [
+        "Fever lasting longer than 4 days or exceeding 102°F.",
+        "Severe earache or cheekbone sinus pain.",
+        "Difficulty swallowing or breathing."
+      ],
+      "typical_medical_treatments": [
+        "OTC decongestants, saline rinses, and throat lozenges."
+      ],
+      "prevention_tips": [
+        "Frequent handwashing and surface disinfection."
+      ]
+    }
+  },
+  {
+    "id": "acute_gastroenteritis",
+    "name": "Acute Gastroenteritis (Stomach Bug)",
+    "system": "digestive",
+    "category": "Gastrointestinal",
+    "urgency": "Moderate",
+    "demographic_risk": {
+      "gender_bias": "any",
+      "gender_multiplier": 1.0,
+      "age_min": 1,
+      "age_max": 90,
+      "age_multiplier": 1.15,
+      "risk_explanation": "Highly contagious viral or bacterial illness affecting all age groups."
+    },
+    "core_symptoms": ["nausea_vomiting", "diarrhea", "abdominal_cramps"],
+    "secondary_symptoms": ["fever", "loss_of_appetite", "weakness", "sweating"],
+    "description": "Inflammation of the stomach and intestines causing acute diarrhea, cramping, and vomiting.",
+    "measurements_and_cures": {
+      "overview": "Oral rehydration solution (ORS) to prevent electrolyte depletion.",
+      "immediate_home_measures": [
+        "Withhold solid food for the first 3 hours after vomiting.",
+        "Take small, frequent sips of ORS electrolyte solution.",
+        "Place a warm compress on the abdomen to soothe cramps."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Follow the BRAT diet (Bananas, Rice, Applesauce, Toast).",
+        "Avoid dairy, greasy foods, caffeine, and spices for 72 hours."
+      ],
+      "when_to_see_doctor": [
+        "Inability to keep liquids down for >12 hours.",
+        "Signs of severe dehydration: dry mouth, sunken eyes, no urination.",
+        "Visible blood in stool or high fever."
+      ],
+      "typical_medical_treatments": [
+        "IV fluids if oral intake fails.",
+        "Antiemetic medications under medical guidance."
+      ],
+      "prevention_tips": [
+        "Thorough hand hygiene before meals and after restroom use."
+      ]
+    }
+  },
+  {
+    "id": "gerd_reflux",
+    "name": "Gastroesophageal Reflux Disease (GERD / Acid Reflux)",
+    "system": "digestive",
+    "category": "Gastrointestinal",
+    "urgency": "Mild",
+    "demographic_risk": {
+      "gender_bias": "any",
+      "gender_multiplier": 1.0,
+      "age_min": 25,
+      "age_max": 75,
+      "age_multiplier": 1.2,
+      "risk_explanation": "More common in adults, people with elevated BMI, or late-night eaters."
+    },
+    "core_symptoms": ["upper_stomach_pain", "acid_reflux", "nausea_vomiting"],
+    "secondary_symptoms": ["dry_cough", "chest_pain_breathing"],
+    "description": "Chronic digestive disease where stomach acid flows back into the food pipe, irritating the lining and causing painful heartburn.",
+    "measurements_and_cures": {
+      "overview": "Meal timing, elevating head of bed, and antacid management.",
+      "immediate_home_measures": [
+        "Do not lie down for 3 hours after eating.",
+        "Elevate head of bed by 6 inches.",
+        "Loosen tight clothing around waist."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Eat smaller, frequent meals.",
+        "Avoid chocolate, mint, citrus, tomatoes, caffeine, and fried foods."
+      ],
+      "when_to_see_doctor": [
+        "Difficulty or pain swallowing.",
+        "Unexplained weight loss or vomiting blood.",
+        "Chest pain radiating to the jaw or arm."
+      ],
+      "typical_medical_treatments": [
+        "Proton Pump Inhibitors (PPIs) or H2 blockers."
+      ],
+      "prevention_tips": [
+        "Avoid late dinners and maintain healthy weight."
+      ]
+    }
+  },
+  {
+    "id": "urinary_tract_infection",
+    "name": "Urinary Tract Infection (Cystitis / UTI)",
+    "system": "urinary",
+    "category": "Urological",
+    "urgency": "Moderate",
+    "demographic_risk": {
+      "gender_bias": "female",
+      "gender_multiplier": 1.5,
+      "age_min": 16,
+      "age_max": 65,
+      "age_multiplier": 1.25,
+      "risk_explanation": "Significantly more common in females due to shorter urethral anatomy."
+    },
+    "core_symptoms": ["painful_urination", "urinary_urgency", "cloudy_urine"],
+    "secondary_symptoms": ["abdominal_cramps", "blood_in_urine", "fever", "fatigue"],
+    "description": "A bacterial infection of the urinary bladder and urethra causing painful, burning sensations and frequent urgent needs to urinate.",
+    "measurements_and_cures": {
+      "overview": "Hydration, flushing bacteria, and targeted antibiotic therapy.",
+      "immediate_home_measures": [
+        "Drink 2-3 large glasses of water immediately to flush bacteria.",
+        "Do not hold urine; empty bladder frequently.",
+        "Apply warm heating pad over pelvis."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Avoid coffee, alcohol, and spicy foods.",
+        "Wipe from front to back."
+      ],
+      "when_to_see_doctor": [
+        "High fever, shaking chills, or nausea.",
+        "Upper back/flank pain (kidney infection warning).",
+        "Visible pink or red blood in urine."
+      ],
+      "typical_medical_treatments": [
+        "Urinalysis and targeted oral antibiotics."
+      ],
+      "prevention_tips": [
+        "Stay hydrated throughout the day."
+      ]
+    }
+  },
+  {
+    "id": "kidney_stones",
+    "name": "Kidney Stones (Renal Calculi)",
+    "system": "kidneys_renal",
+    "category": "Urological",
+    "urgency": "Moderate",
+    "demographic_risk": {
+      "gender_bias": "male",
+      "gender_multiplier": 1.25,
+      "age_min": 25,
+      "age_max": 65,
+      "age_multiplier": 1.2,
+      "risk_explanation": "More prevalent in men and individuals with low water intake or high sodium diets."
+    },
+    "core_symptoms": ["flank_pain", "painful_urination", "blood_in_urine"],
+    "secondary_symptoms": ["nausea_vomiting", "urinary_urgency", "fever"],
+    "description": "Hard mineral deposits formed inside kidneys that cause excruciating flank and back pain when moving through the ureter.",
+    "measurements_and_cures": {
+      "overview": "Copious fluid intake, medical expulsive therapy, and pain relief.",
+      "immediate_home_measures": [
+        "Drink 2-3 liters of water per day.",
+        "Apply heat to affected flank to ease smooth muscle spasms.",
+        "Strain urine to catch passed stones for lab analysis."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Reduce dietary sodium and animal protein.",
+        "Add fresh lemon juice to water (citrate inhibits stone crystals)."
+      ],
+      "when_to_see_doctor": [
+        "Excruciating pain making it impossible to sit still.",
+        "Complete inability to urinate.",
+        "Fever with flank pain."
+      ],
+      "typical_medical_treatments": [
+        "Alpha-blockers (Tamsulosin) and soundwave lithotripsy (ESWL)."
+      ],
+      "prevention_tips": [
+        "Keep daily urine clear and pale with consistent water intake."
+      ]
+    }
+  },
+  {
+    "id": "iron_deficiency_anemia",
+    "name": "Iron-Deficiency Anemia",
+    "system": "cardiovascular",
+    "category": "Hematological",
+    "urgency": "Moderate",
+    "demographic_risk": {
+      "gender_bias": "female",
+      "gender_multiplier": 1.5,
+      "age_min": 14,
+      "age_max": 52,
+      "age_multiplier": 1.35,
+      "risk_explanation": "Disproportionately affects females of childbearing age due to menstrual blood loss."
+    },
+    "core_symptoms": ["fatigue", "weakness", "dizziness", "cold_hands_feet"],
+    "secondary_symptoms": ["heart_palpitations", "shortness_of_breath", "hair_thinning"],
+    "description": "Inadequate healthy red blood cells caused by lack of iron, preventing efficient oxygen delivery to muscles and brain.",
+    "measurements_and_cures": {
+      "overview": "Iron repletion, vitamin C pairing, and CBC/Ferritin monitoring.",
+      "immediate_home_measures": [
+        "Pace daily activities and take scheduled rest breaks.",
+        "Stand up slowly to avoid orthostatic dizziness.",
+        "Wear warm socks and gloves."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Eat iron-rich foods: lentils, spinach, beans, tofu, lean meats.",
+        "Pair with Vitamin C (citrus, peppers) to multiply absorption.",
+        "Do not drink tea/coffee with meals."
+      ],
+      "when_to_see_doctor": [
+        "Chest pain or rapid heartbeat during mild exertion.",
+        "Fainting spells or black tarry stools."
+      ],
+      "typical_medical_treatments": [
+        "CBC and Ferritin blood tests.",
+        "Prescription oral or IV iron supplements."
+      ],
+      "prevention_tips": [
+        "Eat a well-rounded diet with diverse iron sources."
+      ]
+    }
+  },
+  {
+    "id": "atopic_dermatitis",
+    "name": "Atopic Dermatitis & Eczema",
+    "system": "skin",
+    "category": "Dermatological",
+    "urgency": "Mild",
+    "demographic_risk": {
+      "gender_bias": "any",
+      "gender_multiplier": 1.0,
+      "age_min": 0,
+      "age_max": 75,
+      "age_multiplier": 1.1,
+      "risk_explanation": "Affects children, teens, and adults, often linked with allergies."
+    },
+    "core_symptoms": ["skin_rash", "itching", "dry_skin", "itchy_skin"],
+    "secondary_symptoms": ["skin_blisters", "body_aches"],
+    "description": "A chronic inflammatory skin condition causing red, intensely itchy, dry, and scaly epidermal patches.",
+    "measurements_and_cures": {
+      "overview": "Ceramide barrier moisturizers, gentle skin cleansing, and trigger avoidance.",
+      "immediate_home_measures": [
+        "Take short lukewarm showers (never hot water).",
+        "Apply thick ceramide cream within 3 minutes of showering.",
+        "Use cold damp compresses to soothe itchiness."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Wear 100% breathable cotton clothing.",
+        "Use fragrance-free hypoallergenic detergents."
+      ],
+      "when_to_see_doctor": [
+        "Yellow crusting or oozing on rash (bacterial infection).",
+        "Severe itching disrupting sleep."
+      ],
+      "typical_medical_treatments": [
+        "Mild topical corticosteroids or calcineurin inhibitors."
+      ],
+      "prevention_tips": [
+        "Moisturize skin twice every day."
+      ]
+    }
+  },
+  {
+    "id": "hypothyroidism",
+    "name": "Hypothyroidism (Underactive Thyroid)",
+    "system": "endocrine",
+    "category": "Endocrine",
+    "urgency": "Moderate",
+    "demographic_risk": {
+      "gender_bias": "female",
+      "gender_multiplier": 1.5,
+      "age_min": 25,
+      "age_max": 70,
+      "age_multiplier": 1.3,
+      "risk_explanation": "Women are 5-8 times more likely to develop thyroid disorders."
+    },
+    "core_symptoms": ["fatigue", "temperature_intolerance", "weight_gain", "hair_thinning"],
+    "secondary_symptoms": ["dry_skin", "swollen_neck", "irregular_cycles", "weakness"],
+    "description": "Underactive thyroid gland failing to produce adequate thyroid hormone, slowing down metabolism, body heat, and energy.",
+    "measurements_and_cures": {
+      "overview": "TSH & Free T4 blood evaluation and daily synthetic thyroid hormone repletion.",
+      "immediate_home_measures": [
+        "Dress in warm layers.",
+        "Keep a daily energy and symptom log."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Ensure adequate dietary iodine and selenium.",
+        "High-fiber diet and regular gentle walking."
+      ],
+      "when_to_see_doctor": [
+        "Enlarging visible neck swelling (goiter).",
+        "Extreme fatigue or slow heart rate."
+      ],
+      "typical_medical_treatments": [
+        "Daily Levothyroxine tablet on an empty stomach."
+      ],
+      "prevention_tips": [
+        "Periodic thyroid screening during wellness checks."
+      ]
+    }
+  },
+  {
+    "id": "hypertension_warning",
+    "name": "Essential Hypertension (High Blood Pressure Warning)",
+    "system": "cardiovascular",
+    "category": "Cardiovascular",
+    "urgency": "Moderate",
+    "demographic_risk": {
+      "gender_bias": "any",
+      "gender_multiplier": 1.05,
+      "age_min": 40,
+      "age_max": 85,
+      "age_multiplier": 1.35,
+      "risk_explanation": "More common in adults over 40 due to arterial stiffening and lifestyle factors."
+    },
+    "core_symptoms": ["headache_throbbing", "dizziness", "heart_palpitations"],
+    "secondary_symptoms": ["blurred_vision", "fatigue", "chest_pain_pressure"],
+    "description": "Persistently high arterial blood pressure straining blood vessels and vital organs.",
+    "measurements_and_cures": {
+      "overview": "DASH low-sodium diet, home blood pressure monitoring, and medical care.",
+      "immediate_home_measures": [
+        "Sit quietly with feet flat for 5 minutes.",
+        "Take deep 4-second inhales and 6-second exhales.",
+        "Measure and log blood pressure."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Follow DASH diet rich in potassium.",
+        "Strictly limit sodium under 1,500mg daily.",
+        "30 minutes of daily brisk walking."
+      ],
+      "when_to_see_doctor": [
+        "Blood pressure reading over 180/120 mm Hg (Emergency).",
+        "Chest pain or visual disturbances."
+      ],
+      "typical_medical_treatments": [
+        "Prescription antihypertensives (ACE inhibitors, ARBs, Calcium Channel Blockers)."
+      ],
+      "prevention_tips": [
+        "Regular home blood pressure checks."
+      ]
+    }
+  },
+  {
+    "id": "gout_arthritis",
+    "name": "Gout (Acute Uric Acid Arthritis)",
+    "system": "musculoskeletal",
+    "category": "Rheumatological",
+    "urgency": "Moderate",
+    "demographic_risk": {
+      "gender_bias": "male",
+      "gender_multiplier": 1.5,
+      "age_min": 35,
+      "age_max": 75,
+      "age_multiplier": 1.3,
+      "risk_explanation": "Occurs 4-5 times more often in adult men, triggered by uric acid crystallization."
+    },
+    "core_symptoms": ["big_toe_pain", "joint_pain_swelling"],
+    "secondary_symptoms": ["fever", "chills", "morning_stiffness"],
+    "description": "Painful inflammatory arthritis caused by uric acid crystals depositing in joints, most often the big toe.",
+    "measurements_and_cures": {
+      "overview": "Anti-inflammatory relief during acute flares, followed by long-term uric acid reduction.",
+      "immediate_home_measures": [
+        "Elevate foot and remove all pressure from the toe.",
+        "Apply ice pack wrapped in towel for 20 minutes.",
+        "Drink 3 liters of water to help kidneys excrete uric acid."
+      ],
+      "dietary_lifestyle_adjustments": [
+        "Avoid shellfish, red meat, beer, and high-fructose corn syrup.",
+        "Drink tart cherry juice and low-fat milk."
+      ],
+      "when_to_see_doctor": [
+        "First sudden attack of excruciating joint pain.",
+        "High fever with joint swelling."
+      ],
+      "typical_medical_treatments": [
+        "Colchicine or NSAIDs for acute attacks; Allopurinol for prevention."
+      ],
+      "prevention_tips": [
+        "Daily hydration and limiting alcohol."
+      ]
+    }
+  }
+]

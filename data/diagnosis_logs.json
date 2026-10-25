@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2026-10-25T11:17:49.408585Z",
+    "gender": "female",
+    "age": 26,
+    "weight": 58.0,
+    "symptom_count": 4,
+    "top_probable_disease": "Migraine Episode",
+    "top_probability": 92
+  },
+  {
+    "timestamp": "2026-10-25T11:29:35.611776Z",
+    "gender": "female",
+    "age": 18,
+    "weight": 42.0,
+    "symptom_count": 2,
+    "top_probable_disease": "Acute Bronchitis",
+    "top_probability": 69
+  },
+  {
+    "timestamp": "2026-10-25T12:27:08.625090Z",
+    "gender": "female",
+    "age": 25,
+    "weight": 62.0,
+    "symptom_count": 4,
+    "top_probable_disease": "Seasonal Influenza (Flu)",
+    "top_probability": 92
+  },
+  {
+    "timestamp": "2026-10-25T12:49:31.489791Z",
+    "gender": "female",
+    "age": 18,
+    "weight": 42.0,
+    "symptom_count": 2,
+    "top_probable_disease": "Seasonal Influenza (Flu)",
+    "top_probability": 84
+  }
+]

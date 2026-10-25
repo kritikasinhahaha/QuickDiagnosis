@@ -1,0 +1,106 @@
+[
+  {
+    "id": "nervous",
+    "name": "Brain & Nervous System",
+    "icon": "🧠",
+    "side": "left",
+    "target_y": "8%",
+    "short_desc": "Brain, Head, Nerves & Neurological Function"
+  },
+  {
+    "id": "throat_ent",
+    "name": "Throat & ENT",
+    "icon": "👂",
+    "side": "left",
+    "target_y": "16%",
+    "short_desc": "Throat, Larynx, Pharynx & Sinuses"
+  },
+  {
+    "id": "respiratory",
+    "name": "Lungs & Respiratory",
+    "icon": "🫁",
+    "side": "left",
+    "target_y": "26%",
+    "short_desc": "Lungs, Bronchi, Trachea & Airway"
+  },
+  {
+    "id": "liver_biliary",
+    "name": "Liver & Biliary",
+    "icon": "🫀",
+    "side": "left",
+    "target_y": "38%",
+    "short_desc": "Liver, Gallbladder & Bile Ducts"
+  },
+  {
+    "id": "digestive",
+    "name": "Digestive System",
+    "icon": "🫄",
+    "side": "left",
+    "target_y": "48%",
+    "short_desc": "Stomach, Small & Large Intestines"
+  },
+  {
+    "id": "urinary",
+    "name": "Urinary System",
+    "icon": "💧",
+    "side": "left",
+    "target_y": "60%",
+    "short_desc": "Bladder, Urethra & Lower Urinary Tract"
+  },
+  {
+    "id": "reproductive",
+    "name": "Reproductive System",
+    "icon": "🧬",
+    "side": "left",
+    "target_y": "72%",
+    "short_desc": "Reproductive Organs & Hormonal Systems"
+  },
+  {
+    "id": "sensory",
+    "name": "Eyes, Ears & Sensory",
+    "icon": "👁️",
+    "side": "right",
+    "target_y": "10%",
+    "short_desc": "Vision, Auditory & Sensory Organs"
+  },
+  {
+    "id": "cardiovascular",
+    "name": "Heart & Cardiovascular",
+    "icon": "❤️",
+    "side": "right",
+    "target_y": "28%",
+    "short_desc": "Heart, Arteries & Blood Circulation"
+  },
+  {
+    "id": "endocrine",
+    "name": "Endocrine System",
+    "icon": "🦋",
+    "side": "right",
+    "target_y": "40%",
+    "short_desc": "Thyroid, Pancreas, Adrenals & Glands"
+  },
+  {
+    "id": "kidneys_renal",
+    "name": "Kidneys & Renal",
+    "icon": "🫘",
+    "side": "right",
+    "target_y": "50%",
+    "short_desc": "Kidneys & Upper Renal Filtration"
+  },
+  {
+    "id": "skin",
+    "name": "Skin & Integumentary",
+    "icon": "🛡️",
+    "side": "right",
+    "target_y": "62%",
+    "short_desc": "Dermis, Epidermis, Hair & Nails"
+  },
+  {
+    "id": "musculoskeletal",
+    "name": "Bones, Joints & Musculoskeletal",
+    "icon": "🦴",
+    "side": "right",
+    "target_y": "74%",
+    "short_desc": "Skeleton, Joint Cartilage & Muscle Tissue"
+  }
+]
