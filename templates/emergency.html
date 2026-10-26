@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Emergency numbers · QuickDiagnosis</title>
+  <meta name="description" content="If this is an emergency, call now. Numbers for India, what to do while you wait, and first aid that works without signal.">
+  
+  <!-- PWA & Mobile Web Capabilities -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#b3261e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png">
+  <link rel="shortcut icon" href="/static/favicon.ico">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       EMERGENCY FULL-RED PAGE STYLING
+       Distraction-free, high-contrast, offline-first design
+       Works seamlessly on both desktop (laptop) and mobile devices
+       ========================================================================== */
+    :root {
+      --emergency-bg: #b3261e;
+      --emergency-bg-darker: #9e1f18;
+      --emergency-card-bg: rgba(0, 0, 0, 0.14);
+      --emergency-card-hover: rgba(0, 0, 0, 0.22);
+      --emergency-border: rgba(255, 255, 255, 0.38);
+      --emergency-border-bright: rgba(255, 255, 255, 0.75);
+      --text-white: #ffffff;
+      --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
+      background-color: var(--emergency-bg);
+      color: var(--text-white);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 15%, #c52b22 0%, var(--emergency-bg) 65%, var(--emergency-bg-darker) 100%);
+      background-attachment: fixed;
+    }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -999px;
+      left: 1rem;
+      background: #ffffff;
+      color: #9e1f18;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      z-index: 1000;
+    }
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* Main Container */
+    .emergency-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    .emergency-container {
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* Top Heading */
+    .emergency-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 1.4rem + 2.6vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: var(--text-white);
+      margin-bottom: 0.35rem;
+      text-wrap: balance;
+    }
+
+    /* Primary Call Buttons */
+    .btn-emergency {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      width: 100%;
+      min-height: 62px;
+      padding: 0.85rem 1.5rem;
+      background-color: #ffffff;
+      color: var(--emergency-bg);
+      font-family: var(--font-sans);
+      font-size: 1.1875rem;
+      font-weight: 750;
+      text-decoration: none;
+      border-radius: 14px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.32);
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-emergency:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.42);
+      background-color: #fffaf9;
+    }
+
+    .btn-emergency:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+    }
+
+    .btn-emergency svg {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+    }
+
+    .btn-emergency-secondary {
+      min-height: 56px;
+      font-size: 1.0625rem;
+      font-weight: 700;
+    }
+
+    /* While You Wait Section */
+    .while-you-wait-section {
+      margin-top: 0.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.375rem;
+      font-weight: 750;
+      letter-spacing: -0.015em;
+      color: var(--text-white);
+      margin-bottom: 0.65rem;
+    }
+
+    .wait-list {
+      list-style-type: disc;
+      padding-left: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    .wait-list li {
+      padding-left: 0.15rem;
+    }
+
+    /* First Aid Section */
+    .first-aid-section {
+      margin-top: 0.65rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9375rem;
+      opacity: 0.92;
+      margin-top: -0.35rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Accordion Details & Summary */
+    .first-aid-item {
+      border: 1.5px solid var(--emergency-border);
+      border-radius: 14px;
+      background: var(--emergency-card-bg);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 0.95rem 1.15rem;
+      transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .first-aid-item:hover {
+      background: var(--emergency-card-hover);
+      border-color: var(--emergency-border-bright);
+    }
+
+    .first-aid-item[open] {
+      background: rgba(0, 0, 0, 0.24);
+      border-color: var(--emergency-border-bright);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .first-aid-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      list-style: none;
+      outline: none;
+      user-select: none;
+    }
+
+    .first-aid-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .summary-text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .summary-title {
+      font-size: 1.0625rem;
+      font-weight: 750;
+      color: var(--text-white);
+      line-height: 1.25;
+    }
+
+    .summary-subtitle {
+      font-size: 0.875rem;
+      opacity: 0.9;
+      color: var(--text-white);
+      line-height: 1.35;
+    }
+
+    .toggle-plus-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--text-white);
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .first-aid-item[open] .toggle-plus-icon {
+      transform: rotate(45deg);
+    }
+
+    /* Accordion Body */
+    .first-aid-body {
+      padding-top: 1rem;
+      margin-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      cursor: default;
+    }
+
+    .btn-call-first {
+      min-height: 48px;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.65rem 1.2rem;
+      border-radius: 12px;
+    }
+
+    .body-subsection {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .body-subheading {
+      font-size: 1rem;
+      font-weight: 750;
+      color: var(--text-white);
+    }
+
+    .do-list {
+      list-style-type: decimal;
+      padding-left: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 0.9375rem;
+      line-height: 1.45;
+    }
+
+    .dont-list {
+      list-style-type: disc;
+      padding-left: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 0.9375rem;
+      line-height: 1.45;
+    }
+
+    .source-note {
+      font-size: 0.8125rem;
+      opacity: 0.9;
+      line-height: 1.4;
+      margin-top: 0.25rem;
+    }
+
+    .source-note a {
+      color: var(--text-white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Need to talk to someone card */
+    .support-card {
+      margin-top: 0.65rem;
+      border: 2px solid rgba(255, 255, 255, 0.65);
+      border-radius: 14px;
+      background: rgba(0, 0, 0, 0.12);
+      padding: 1.15rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .support-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 750;
+      color: var(--text-white);
+      letter-spacing: -0.01em;
+    }
+
+    .support-text {
+      font-size: 0.96875rem;
+      line-height: 1.48;
+    }
+
+    .support-text a {
+      color: var(--text-white);
+      font-weight: 750;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Outside India Text */
+    .outside-note {
+      font-size: 0.9375rem;
+      opacity: 0.92;
+      line-height: 1.45;
+      margin-top: 0.25rem;
+    }
+
+    /* Back Link (Requested change: "Back to QuickDiagnosis") */
+    .back-action-wrap {
+      margin-top: 0.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .back-to-home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--text-white);
+      text-decoration: none;
+      padding: 0.5rem 0.25rem;
+      border-radius: 6px;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    .back-to-home-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      opacity: 0.92;
+      transform: translateX(-2px);
+    }
+
+    .back-to-home-link svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.15s ease;
+    }
+
+    .back-to-home-link:hover svg {
+      transform: translateX(-3px);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE ADAPTATIONS (Desktop Laptop & Mobile)
+       ========================================================================== */
+    @media (max-width: 600px) {
+      .emergency-wrapper {
+        padding: 1.75rem 1rem 3rem;
+      }
+
+      .emergency-heading {
+        font-size: 2.15rem;
+      }
+
+      .btn-emergency {
+        min-height: 58px;
+        font-size: 1.125rem;
+        padding: 0.8rem 1.25rem;
+      }
+
+      .btn-emergency-secondary {
+        min-height: 52px;
+        font-size: 1rem;
+      }
+
+      .first-aid-item {
+        padding: 0.85rem 1rem;
+      }
+
+      .summary-title {
+        font-size: 1rem;
+      }
+
+      .summary-subtitle {
+        font-size: 0.825rem;
+      }
+
+      .support-card {
+        padding: 1rem;
+      }
+
+      .support-title {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .emergency-heading {
+        font-size: 1.85rem;
+      }
+      .btn-emergency {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a class="skip-link" href="#emergency-main">Skip to content</a>
+
+  <main class="emergency-wrapper" id="emergency-main">
+    <div class="emergency-container">
+      
+      <!-- Page Title -->
+      <h1 class="emergency-heading">If this is an<br>emergency, call now</h1>
+
+      <!-- Primary Emergency Call Buttons -->
+      <a class="btn-emergency" href="tel:112" aria-label="Call national emergency number 112">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>
+        </svg>
+        Call 112
+      </a>
+
+      <a class="btn-emergency btn-emergency-secondary" href="tel:108" aria-label="Call ambulance emergency number 108">
+        Call 108, ambulance
+      </a>
+
+      <!-- While you wait -->
+      <section class="while-you-wait-section" aria-labelledby="while-wait-heading">
+        <h2 id="while-wait-heading" class="section-title">While you wait</h2>
+        <ul class="wait-list">
+          <li>Stay with the person</li>
+          <li>Don't drive yourself</li>
+          <li>Unlock the door and switch on a light so help can find you</li>
+          <li>Follow what the person on the phone tells you</li>
+        </ul>
+      </section>
+
+      <!-- First aid while help comes -->
+      <section class="first-aid-section" aria-labelledby="first-aid-heading">
+        <h2 id="first-aid-heading" class="section-title">First aid while help comes</h2>
+        <p class="section-subtitle">Tap what's happening. This works without signal.</p>
+
+        <!-- 1. Not breathing normally -->
+        <details id="cpr" class="first-aid-item">
+          <summary class="first-aid-summary">
+            <div class="summary-text-group">
+              <span class="summary-title">Not breathing normally</span>
+              <span class="summary-subtitle">Doesn't respond, and isn't breathing or only gasping</span>
+            </div>
+            <span class="toggle-plus-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="first-aid-body">
+            <a class="btn-emergency btn-call-first" href="tel:112">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>
+              </svg>
+              Call 112 first
+            </a>
+            <div class="body-subsection">
+              <h3 class="body-subheading">Do</h3>
+              <ol class="do-list">
+                <li>Call 112 and put the phone on speaker.</li>
+                <li>Kneel beside them. Put the heel of one hand in the centre of the chest, the other hand on top.</li>
+                <li>Push down hard and fast, about 5 to 6 cm, twice a second. Let the chest come back up each time.</li>
+                <li>Keep going until help arrives or they start breathing normally. Swap with someone if you tire.</li>
+              </ol>
+            </div>
+            <div class="body-subsection">
+              <h3 class="body-subheading">Don't</h3>
+              <ul class="dont-list">
+                <li>Don't stop to check for breathing again and again.</li>
+                <li>Don't wait for a doctor before you start pushing.</li>
+              </ul>
+            </div>
+            <p class="source-note">
+              From: <a href="https://www.nhs.uk/conditions/first-aid/cpr/" target="_blank" rel="noopener noreferrer">NHS: CPR</a>. General first aid, not a substitute for emergency help.
+            </p>
+          </div>
+        </details>
+
+        <!-- 2. Choking (adult) -->
+        <details id="choking" class="first-aid-item">
+          <summary class="first-aid-summary">
+            <div class="summary-text-group">
+              <span class="summary-title">Choking (adult)</span>
+              <span class="summary-subtitle">Can't cough, speak or breathe</span>
+            </div>
+            <span class="toggle-plus-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="first-aid-body">
+            <a class="btn-emergency btn-call-first" href="tel:112">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>
+              </svg>
+              Call 112 first
+            </a>
+            <div class="body-subsection">
+              <h3 class="body-subheading">Do</h3>
+              <ol class="do-list">
+                <li>If they can cough, tell them to keep coughing.</li>
+                <li>If they can't: up to 5 sharp blows between the shoulder blades while they lean forward.</li>
+                <li>Then up to 5 abdominal thrusts: stand behind, a fist just above the belly button, pull sharply in and up.</li>
+                <li>Keep alternating. Call 112 if it doesn't clear. If they stop responding, start CPR.</li>
+                <li>See a doctor afterwards if you used abdominal thrusts.</li>
+              </ol>
+            </div>
+            <div class="body-subsection">
+              <h3 class="body-subheading">Don't</h3>
+              <ul class="dont-list">
+                <li>Don't put your fingers in their mouth to search for the object.</li>
+                <li>Don't use abdominal thrusts on a pregnant woman or a baby under 1: call 112 and follow their instructions.</li>
+              </ul>
+            </div>
+            <p class="source-note">
+              From: <a href="https://www.neas.nhs.uk/community-learning/emergency-advice/choking" target="_blank" rel="noopener noreferrer">NHS (NEAS): choking</a>, <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support" target="_blank" rel="noopener noreferrer">AHA 2025 basic life support</a>. General first aid, not a substitute for emergency help.
+            </p>
+          </div>
+        </details>
+
+        <!-- 3. Snake bite -->
+        <details id="snakebite" class="first-aid-item">
+          <summary class="first-aid-summary">
+            <div class="summary-text-group">
+              <span class="summary-title">Snake bite</span>
+              <span class="summary-subtitle">Any snake bite, even if it doesn't hurt much</span>
+            </div>
+            <span class="toggle-plus-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="first-aid-body">
+            <a class="btn-emergency btn-call-first" href="tel:112">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>
+              </svg>
+              Call 112 first
+            </a>
+            <div class="body-subsection">
+              <h3 class="body-subheading">Do</h3>
+              <ol class="do-list">
+                <li>Stay calm and reassure them: most snake bites are not venomous.</li>
+                <li>Keep the bitten arm or leg still, like a broken bone: a loose splint, no pressure.</li>
+                <li>Take off rings, watches, shoes and anything tight near the bite.</li>
+                <li>Get to the nearest hospital or health centre at once (call 108 or 112). Don't let them walk or drive.</li>
+                <li>Tell the doctor about any symptoms on the way. Take a photo of the snake only if it's safe.</li>
+              </ol>
+            </div>
+            <div class="body-subsection">
+              <h3 class="body-subheading">Don't</h3>
+              <ul class="dont-list">
+                <li>No tight tourniquet or rope.</li>
+                <li>Don't cut, suck, rub or massage the bite, and put nothing on it: no herbs, chemicals, ice or 'black stone'.</li>
+                <li>Nothing to eat or drink.</li>
+                <li>Don't lose time with a traditional healer, and don't try to catch or kill the snake.</li>
+              </ul>
+            </div>
+            <p class="source-note">
+              From: <a href="https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/3941.pdf" target="_blank" rel="noopener noreferrer">MoHFW snakebite guidelines (2016)</a>, <a href="https://www.who.int/news-room/fact-sheets/detail/snakebite-envenoming" target="_blank" rel="noopener noreferrer">WHO: snakebite</a>, <a href="https://www.nhs.uk/conditions/snake-bites/" target="_blank" rel="noopener noreferrer">NHS: snake bites</a>. General first aid, not a substitute for emergency help.
+            </p>
+          </div>
+        </details>
+
+        <!-- 4. Burns and scalds -->
+        <details id="burns" class="first-aid-item">
+          <summary class="first-aid-summary">
+            <div class="summary-text-group">
+              <span class="summary-title">Burns and scalds</span>
+              <span class="summary-subtitle">Hot water, oil, fire, electricity or chemicals</span>
+            </div>
+            <span class="toggle-plus-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="first-aid-body">
+            <div class="body-subsection">
+              <h3 class="body-subheading">Do</h3>
+              <ol class="do-list">
+                <li>Make it safe first: switch off the electricity, move away from the heat.</li>
+                <li>Take off clothes and jewellery near the burn, unless stuck to the skin.</li>
+                <li>Cool the burn under cool running water for 20 minutes. Keep the rest of the person warm, especially a child.</li>
+                <li>Cover it loosely with cling film or a clean cloth.</li>
+                <li>Go to hospital for a large or deep burn, or one on the face, hands, feet or private parts.</li>
+                <li>Chemical and electrical burns always need a hospital. Call 112 for a serious burn.</li>
+              </ol>
+            </div>
+            <div class="body-subsection">
+              <h3 class="body-subheading">Don't</h3>
+              <ul class="dont-list">
+                <li>No ice.</li>
+                <li>No butter, oil, toothpaste, haldi, paste or cream.</li>
+                <li>Don't burst blisters or pull off stuck clothing.</li>
+                <li>No sticky plasters.</li>
+              </ul>
+            </div>
+            <p class="source-note">
+              From: <a href="https://www.nhs.uk/conditions/burns-and-scalds/" target="_blank" rel="noopener noreferrer">NHS: burns and scalds</a>, <a href="https://www.who.int/news-room/fact-sheets/detail/burns" target="_blank" rel="noopener noreferrer">WHO: burns</a>. General first aid, not a substitute for emergency help.
+            </p>
+          </div>
+        </details>
+
+        <!-- 5. Heat stroke -->
+        <details id="heatstroke" class="first-aid-item">
+          <summary class="first-aid-summary">
+            <div class="summary-text-group">
+              <span class="summary-title">Heat stroke</span>
+              <span class="summary-subtitle">Very hot skin with confusion, fainting, fits, or no sweating</span>
+            </div>
+            <span class="toggle-plus-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="first-aid-body">
+            <a class="btn-emergency btn-call-first" href="tel:112">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>
+              </svg>
+              Call 112 first
+            </a>
+            <div class="body-subsection">
+              <h3 class="body-subheading">Do</h3>
+              <ol class="do-list">
+                <li>Call 112 or 108.</li>
+                <li>Move them to shade or a cool room and take off extra clothes.</li>
+                <li>Wet the skin with cool water and fan them all the time. Cold packs or wet cloths on the neck and armpits.</li>
+                <li>If they're unconscious but breathing, lay them on their side.</li>
+                <li>Small sips of water only if they're fully awake.</li>
+              </ol>
+            </div>
+            <div class="body-subsection">
+              <h3 class="body-subheading">Don't</h3>
+              <ul class="dont-list">
+                <li>No drinks if they're confused or unconscious.</li>
+                <li>Don't leave them alone.</li>
+              </ul>
+            </div>
+            <p class="source-note">
+              From: <a href="https://ncdc.mohfw.gov.in/uploads/pdf/5.%20Public%20Health%20Advisory_Extreme%20HeatHeatwave.pdf" target="_blank" rel="noopener noreferrer">NCDC heatwave advisory</a>, <a href="https://www.nhs.uk/conditions/heat-exhaustion-heatstroke/" target="_blank" rel="noopener noreferrer">NHS: heatstroke</a>. General first aid, not a substitute for emergency help.
+            </p>
+          </div>
+        </details>
+
+        <!-- 6. Dog or animal bite -->
+        <details id="dogbite" class="first-aid-item">
+          <summary class="first-aid-summary">
+            <div class="summary-text-group">
+              <span class="summary-title">Dog or animal bite</span>
+              <span class="summary-subtitle">A bite or scratch from a dog, cat, monkey or any animal</span>
+            </div>
+            <span class="toggle-plus-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="first-aid-body">
+            <div class="body-subsection">
+              <h3 class="body-subheading">Do</h3>
+              <ol class="do-list">
+                <li>Wash the wound with soap and running water for at least 15 minutes.</li>
+                <li>Put on an antiseptic such as povidone-iodine if you have it.</li>
+                <li>Go to a hospital or health centre the same day for the rabies vaccine. Deep bites also need an injection around the wound.</li>
+                <li>Ask whether you need a tetanus shot.</li>
+              </ol>
+            </div>
+            <div class="body-subsection">
+              <h3 class="body-subheading">Don't</h3>
+              <ul class="dont-list">
+                <li>Don't put chillies, oil, turmeric or anything else on the wound.</li>
+                <li>Don't stitch it or bind it tightly at home.</li>
+                <li>Don't wait to see if the animal gets ill: start the vaccine now.</li>
+              </ul>
+            </div>
+            <p class="source-note">
+              From: <a href="https://www.who.int/news-room/fact-sheets/detail/rabies" target="_blank" rel="noopener noreferrer">WHO: rabies</a>, <a href="https://www.nhs.uk/conditions/animal-and-human-bites/" target="_blank" rel="noopener noreferrer">NHS: animal and human bites</a>. General first aid, not a substitute for emergency help.
+            </p>
+          </div>
+        </details>
+
+        <!-- 7. Fainting -->
+        <details id="fainting" class="first-aid-item">
+          <summary class="first-aid-summary">
+            <div class="summary-text-group">
+              <span class="summary-title">Fainting</span>
+              <span class="summary-subtitle">Suddenly falls or slumps, then usually wakes quickly</span>
+            </div>
+            <span class="toggle-plus-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="first-aid-body">
+            <div class="body-subsection">
+              <h3 class="body-subheading">Do</h3>
+              <ol class="do-list">
+                <li>Check they respond and are breathing.</li>
+                <li>Lay them on their back and raise their legs. If she's more than 28 weeks pregnant, on her side.</li>
+                <li>Call 112 if they don't wake within a minute, or aren't breathing normally.</li>
+                <li>Also call 112 for chest pain, a fit, an injury, or fainting while exercising or lying down.</li>
+                <li>See a doctor afterwards, even if they feel fine.</li>
+              </ol>
+            </div>
+            <div class="body-subsection">
+              <h3 class="body-subheading">Don't</h3>
+              <ul class="dont-list">
+                <li>Don't let them get up quickly: slowly, when they feel ready.</li>
+                <li>Don't let them drive afterwards.</li>
+              </ul>
+            </div>
+            <p class="source-note">
+              From: <a href="https://www.nhs.uk/conditions/fainting/" target="_blank" rel="noopener noreferrer">NHS: fainting</a>. General first aid, not a substitute for emergency help.
+            </p>
+          </div>
+        </details>
+
+      </section>
+
+      <!-- Mental Health Helpline Box -->
+      <section class="support-card" aria-labelledby="support-heading">
+        <h2 id="support-heading" class="support-title">Need to talk to someone?</h2>
+        <p class="support-text">
+          Tele-MANAS is a free mental-health helpline, open day and night: <a href="tel:14416">14416</a>. If you are in immediate danger, call 112.
+        </p>
+      </section>
+
+      <!-- Outside India Note -->
+      <p class="outside-note">
+        Outside India, call your local emergency number (112 in the EU, 911 in the US, 999 in the UK).
+      </p>
+
+      <!-- Back Link (Text changed to "Back to QuickDiagnosis" as requested) -->
+      <div class="back-action-wrap">
+        <a href="/" class="back-to-home-link" id="back-to-qd-link" onclick="if(window.history.length > 1 && document.referrer.includes(window.location.host)) { window.history.back(); return false; }">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to QuickDiagnosis
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Ensure offline resilience: register service worker if available
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(function() {});
+    }
+  </script>
+</body>
+</html>
